@@ -1,11 +1,20 @@
 package com.nailsWeb.salonService.model;
 
+import com.fasterxml.jackson.annotation.JsonTypeId;
+
 public class Salon {
     private String id;
     private String name;
     private int phone;
     private String email;
     private String address;
+    private String Owner;
+    public String getOwner() {
+        return Owner;
+    }
+    public void setOwner(String owner) {
+        Owner = owner;
+    }
 
     public String getId() {
         return id;

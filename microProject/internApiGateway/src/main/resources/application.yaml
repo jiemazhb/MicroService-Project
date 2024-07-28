@@ -1,0 +1,67 @@
+server:
+  port: 8052
+
+spring:
+  application:
+    name: API-GATEWAY
+  config:
+#    import: configserver:http://localhost:8051
+    import: configserver:http://${CONFIG_SERVER_ADDRESS:localhost}:8051
+
+
+  cloud:
+    gateway:
+      routes:
+        - id: ORDER-SERVICE
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ORDER-SERVICE
+                fallbackuri: forward:/orderServiceFallback
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
+                key-resolver: "#{@userIdSolver}"
+        - id: PRODUCT-SERVICE
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: PRODUCT-SERVICE
+                fallbackuri: forward:/productServiceFallback
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
+                key-resolver: "#{@userIdSolver}"
+        - id: PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payments/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: PAYMENT-SERVICE
+                fallbackuri: forward:/paymentServiceFallback
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
+                key-resolver: "#{@userIdSolver}"
+
+okta:
+  oauth2:
+    issuer: https://dev-78291268.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oaiin5tyqj0KbxR65d7
+    client-secret: 3TpaJalRYM4WXXOc53fq1r6Jr__RAWq91ZRrRcUyFe1MnHd9ERuImGkj_EqdDpr6
+    scopes: openid, profile, email, offline-access
+    redirect-uri: http://localhost:8052/login/oauth2/code/okta
+
+
