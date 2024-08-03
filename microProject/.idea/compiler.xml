@@ -2,10 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+<<<<<<< HEAD
+=======
+      <profile default="true" name="Default" enabled="true" />
+>>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="interServiceRegistry" />
       </profile>
     </annotationProcessing>
@@ -16,6 +21,27 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="interServiceRegistry" options="-parameters" />
+=======
+        <module name="internOrderService" />
+        <module name="interServiceRegistry" />
+        <module name="internPaymentService" />
+        <module name="customerService" />
+        <module name="internProductService" />
+        <module name="internApiGateway" />
+        <module name="internServiceConfig" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="customerService" options="-parameters" />
+      <module name="interServiceRegistry" options="-parameters" />
+      <module name="internApiGateway" options="-parameters" />
+      <module name="internOrderService" options="-parameters" />
+      <module name="internPaymentService" options="-parameters" />
+      <module name="internProductService" options="-parameters" />
+      <module name="internServiceConfig" options="-parameters" />
+>>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
     </option>
   </component>
 </project>

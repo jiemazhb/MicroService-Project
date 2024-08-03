@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+>>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
 =======
   <component name="ExternalStorageConfigurationManager" enabled="true" />
 >>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
@@ -14,11 +18,14 @@
         <option value="$PROJECT_DIR$/internProductService/pom.xml" />
         <option value="$PROJECT_DIR$/interServiceRegistry/pom.xml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19 (2)" project-jdk-type="JavaSDK" />
 =======
+=======
+>>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
         <option value="$USER_HOME$/Downloads/customerService/customerService/pom.xml" />
       </list>
     </option>
@@ -26,5 +33,8 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+<<<<<<< HEAD
+>>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
+=======
 >>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
 </project>
