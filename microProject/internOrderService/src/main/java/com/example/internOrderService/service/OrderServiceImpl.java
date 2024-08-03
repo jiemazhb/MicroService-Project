@@ -3,6 +3,7 @@ package com.example.internOrderService.service;
 import com.example.internOrderService.entiry.OrderEntity;
 import com.example.internOrderService.external.client.PaymentServiceFeignClient;
 import com.example.internOrderService.external.client.ProductServiceFeignClient;
+import com.example.internOrderService.model.OrderEvent;
 import com.example.internOrderService.model.OrderRequest;
 import com.example.internOrderService.model.OrderResponse;
 import com.example.internOrderService.model.PaymentRequest;
@@ -28,6 +29,8 @@ public class OrderServiceImpl implements OrderService{
     private PaymentServiceFeignClient paymentServiceFeignClient;
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private OrderProducerService orderProducerService;
     //在下面的方法中，搞懂如何进行数据库回滚，
     @Override
     public long placeOrder(OrderRequest orderRequest) {
@@ -51,6 +54,35 @@ public class OrderServiceImpl implements OrderService{
                     .totalAmount(orderEntity.getTotalAmount())
                     .build();
             this.paymentServiceFeignClient.makePayment(paymentRequest);
+
+            return orderEntity.getOrderId();
+        }catch (Exception e){
+            log.info("exception happening.. placed order failed.");
+            throw new RuntimeException("failed to place order", e);
+        }
+    }
+
+    @Override
+    public long placeOrderUsingKafkaMQ(OrderRequest orderRequest) {
+        try {
+            OrderEntity orderEntity = OrderEntity.builder()
+                    .productId(orderRequest.getProductId())
+                    .orderQuantity(orderRequest.getOrderQuantity())
+                    .totalAmount(orderRequest.getTotalAmount())
+                    .orderDate(Instant.now())
+                    .orderStatus("CREATED")
+                    .paymentMode(orderRequest.getPaymentMode().name())
+                    .build();
+            orderEntity = this.orderRepository.save(orderEntity);
+
+            OrderEvent orderEvent = OrderEvent.builder()
+                    .orderId(orderEntity.getOrderId())
+                    .productId(orderRequest.getProductId())
+                    .quantity(orderRequest.getOrderQuantity())
+                    .paymentMode(orderRequest.getPaymentMode().name())
+                    .totalAmount(orderRequest.getTotalAmount()).build();
+
+            orderProducerService.sendMsg(orderEvent);
 
             return orderEntity.getOrderId();
         }catch (Exception e){

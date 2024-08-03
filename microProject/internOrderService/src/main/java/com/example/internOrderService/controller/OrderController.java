@@ -23,6 +23,11 @@ public class OrderController {
         long orderId = this.orderService.placeOrder(orderRequest);
         return new ResponseEntity<>(orderId, HttpStatus.OK);
     }
+    @PostMapping("/placeOrderByKafkaMessageQueue")
+    public ResponseEntity<Long> placeOrderByKafkaMessageQueue(@RequestBody OrderRequest orderRequest){
+        long orderId = this.orderService.placeOrderUsingKafkaMQ(orderRequest);
+        return new ResponseEntity<>(orderId, HttpStatus.OK);
+    }
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderResponse> getOrderDetailByOrderId(@PathVariable long orderId){
         log.info("==============>getOrderDetailByOrderId   收到 =================");
