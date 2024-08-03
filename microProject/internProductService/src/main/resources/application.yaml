@@ -2,7 +2,6 @@
 
 
 
-
 server:
   port: 8001
 
@@ -20,6 +19,8 @@ spring:
     name: PRODUCT-SERVICE
   config:
     import: configserver:http://localhost:8051
+
+
 
 #eureka:
 #  instance:

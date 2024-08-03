@@ -20,6 +20,11 @@ spring:
     name: ORDER-SERVICE
   config:
     import: configserver:http://localhost:8051
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: localhost:9092
 
 #eureka:
 #  instance:

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="internOrderService" />
+        <module name="interServiceRegistry" />
+        <module name="salonService" />
+        <module name="internPaymentService" />
+        <module name="internProductService" />
+        <module name="internApiGateway" />
+        <module name="internServiceConfig" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="internApiGateway" target="17" />
+      <module name="internOrderService" target="17" />
+      <module name="internPaymentService" target="17" />
+      <module name="internProductService" target="17" />
+      <module name="internServiceConfig" target="17" />
+      <module name="interServiceRegistry" target="17" />
+      <module name="salonService" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="interServiceRegistry" options="-parameters" />
+      <module name="internApiGateway" options="-parameters" />
+      <module name="internOrderService" options="-parameters" />
+      <module name="internPaymentService" options="-parameters" />
+      <module name="internProductService" options="-parameters" />
+      <module name="internServiceConfig" options="-parameters" />
+      <module name="salonService" options="-parameters" />
+    </option>
+  </component>
+</project>
