@@ -31,6 +31,13 @@
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
+<!--		引入共享库-->
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>sharedLibrary</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

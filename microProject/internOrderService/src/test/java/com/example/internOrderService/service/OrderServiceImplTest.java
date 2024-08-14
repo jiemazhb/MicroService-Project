@@ -8,8 +8,6 @@ import com.example.internOrderService.model.OrderResponse;
 import com.example.internOrderService.model.PaymentMode;
 import com.example.internOrderService.model.PaymentRequest;
 import com.example.internOrderService.repository.OrderRepository;
-import com.google.common.base.Verify;
-import com.netflix.servo.annotations.Monitor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +22,6 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Instant;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class OrderServiceImplTest {
 

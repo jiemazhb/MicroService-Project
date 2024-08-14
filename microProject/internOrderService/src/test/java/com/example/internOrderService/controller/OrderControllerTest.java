@@ -1,7 +1,6 @@
 package com.example.internOrderService.controller;
 
 import com.example.internOrderService.OrderServiceConfigTest;
-import com.example.internOrderService.model.OrderRequest;
 import com.example.internOrderService.repository.OrderRepository;
 import com.example.internOrderService.service.OrderService;
 import com.github.tomakehurst.wiremock.client.WireMock;

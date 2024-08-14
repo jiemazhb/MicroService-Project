@@ -2,16 +2,16 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/interServiceRegistry/src/main/java" charset="UTF-8" />
-<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/interServiceRegistry/src/main/resources" charset="UTF-8" />
-=======
     <file url="file://$PROJECT_DIR$/internApiGateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/internApiGateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/internOrderService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/internOrderService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/internPaymentService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/internPaymentService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/internProductService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/internProductService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/internServiceConfig/src/main/java" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/customerService/customerService/src/main/java" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/customerService/customerService/src/main/resources" charset="UTF-8" />
->>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
+    <file url="file://$PROJECT_DIR$/internServiceConfig/src/main/resources" charset="UTF-8" />
   </component>
 </project>

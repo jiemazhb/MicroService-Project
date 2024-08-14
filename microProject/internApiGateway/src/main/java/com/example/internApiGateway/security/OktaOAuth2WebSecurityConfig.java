@@ -41,7 +41,9 @@ public class OktaOAuth2WebSecurityConfig {
 
         return new InMemoryReactiveClientRegistrationRepository(clientRegistration);
     }
-
+    //配置Spring WebFlux 应用的安全策略
+    //ServerHttpSecurity是配置 WebFlux 安全性的入口。
+    // 它提供了一组方法，用于定义不同的安全策略（如授权规则、登录方式等）
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         http.authorizeExchange(exchanges -> exchanges.anyExchange().authenticated())
@@ -49,4 +51,15 @@ public class OktaOAuth2WebSecurityConfig {
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
         return http.build();
     }
+//    @Bean
+//    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+//        http
+//                .csrf(csrf -> csrf.disable())  // 使用新的语法禁用 CSRF
+//                .authorizeExchange(exchange -> exchange
+//                        .pathMatchers("/eureka/**").permitAll()  // 允许对 /eureka/** 的无认证访问
+//                        .anyExchange().authenticated())  // 其他请求需要认证
+//                .oauth2ResourceServer(ServerHttpSecurity.OAuth2ResourceServerSpec::jwt);  // 使用 JWT 进行认证
+//        return http.build();
+//    }
+
 }

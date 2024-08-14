@@ -3,7 +3,6 @@ package com.example.internOrderService.service;
 import com.example.internOrderService.entiry.OrderEntity;
 import com.example.internOrderService.external.client.PaymentServiceFeignClient;
 import com.example.internOrderService.external.client.ProductServiceFeignClient;
-import com.example.internOrderService.model.OrderEvent;
 import com.example.internOrderService.model.OrderRequest;
 import com.example.internOrderService.model.OrderResponse;
 import com.example.internOrderService.model.PaymentRequest;
@@ -11,12 +10,11 @@ import com.example.internOrderService.repository.OrderRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
+import com.example.sharedLibrary.model.OrderEvent;
 
-import javax.swing.text.html.Option;
+
 import java.time.Instant;
-import java.util.Optional;
 
 @Service
 @Log4j2

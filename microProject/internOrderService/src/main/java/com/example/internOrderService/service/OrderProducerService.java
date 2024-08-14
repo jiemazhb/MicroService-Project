@@ -1,13 +1,12 @@
 package com.example.internOrderService.service;
 
-import com.example.internOrderService.model.OrderEvent;
+import com.example.sharedLibrary.model.OrderEvent;
 import org.springframework.messaging.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
-import com.example.internOrderService.model.OrderEvent;
 
 @Service
 public class OrderProducerService {

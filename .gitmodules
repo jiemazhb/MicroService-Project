@@ -1,0 +1,15 @@
+[submodule "microProject/internOrderService/libs"]
+	path = microProject/internOrderService/libs
+	url = https://github.com/jiemazhb/MicroService-shared-library.git
+[submodule "microProject/internOrderService/src/main/java/com/example/internOrderService/libs/MicroService-shared-library"]
+	path = microProject/internOrderService/src/main/java/com/example/internOrderService/libs/MicroService-shared-library
+	url = https://github.com/jiemazhb/MicroService-shared-library.git
+[submodule "microProject/internOrderService/src/main/java/com/example/internOrderService/MicroService-shared-library"]
+	path = microProject/internOrderService/src/main/java/com/example/internOrderService/MicroService-shared-library
+	url = https://github.com/jiemazhb/MicroService-shared-library.git
+[submodule "microProject/internOrderService/MicroService-shared-library"]
+	path = microProject/internOrderService/MicroService-shared-library
+	url = https://github.com/jiemazhb/MicroService-shared-library.git
+[submodule "microProject/internOrderService/sharedLibrary"]
+	path = microProject/internOrderService/sharedLibrary
+	url = https://github.com/jiemazhb/MicroService-shared-library

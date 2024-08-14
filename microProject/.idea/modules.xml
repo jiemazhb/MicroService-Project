@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/interServiceRegistry/interServiceRegistry.iml" filepath="$PROJECT_DIR$/interServiceRegistry/interServiceRegistry.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/microProject.iml" filepath="$PROJECT_DIR$/.idea/microProject.iml" />
->>>>>>> 976257955dfbf43f5e9d42a74dd873a1f662004d
+      <module fileurl="file://$PROJECT_DIR$/internApiGateway/internApiGateway.iml" filepath="$PROJECT_DIR$/internApiGateway/internApiGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internOrderService/internOrderService.iml" filepath="$PROJECT_DIR$/internOrderService/internOrderService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internPaymentService/internPaymentService.iml" filepath="$PROJECT_DIR$/internPaymentService/internPaymentService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internProductService/internProductService.iml" filepath="$PROJECT_DIR$/internProductService/internProductService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internServiceConfig/internServiceConfig.iml" filepath="$PROJECT_DIR$/internServiceConfig/internServiceConfig.iml" />
     </modules>
   </component>
 </project>
